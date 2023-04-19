@@ -85,8 +85,8 @@ docker container ls
 
 
 # Show all the states of docker container on nginx based container 
-
-
+Refer this link
+https://www.docker.com/blog/how-to-use-the-official-nginx-docker-image/
 
 # Explain docker architecture 
 
