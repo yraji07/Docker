@@ -87,3 +87,18 @@ inspect myvol
 
 Figure out locations of volumes in your local systems 
 ![preview](imgs/Screenshot%202023-04-15%20102801.png)
+
+
+
+### Class 19th april 
+--------------------
+Installed docker vm or choose docker playground
+git clone https://github.com/DevProjectsForDevOps/StudentCoursesRestAPI.git
+cd StudentCoursesRestAPI
+docker image build -t scr:latest
+docker network create -d bridge scr_bridge
+docker volume create scr_db
+docker container run -d --name mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test -e MYSQL_USER=directdevops -e MYSQL_PASSWORD=directdevops --network scr_bridge -v scr_db:/var/lib/mysql mysql:5.6
+docker container run -d --name mypythonapp -e MYSQL_SERVER=mysql --network scr_bridge -P scr:latest
+
+Now check the container and see the content
